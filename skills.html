@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Skills ✦ AHONAF | Video Editing, AI &amp; Web Development</title>
+  <meta name="description" content="Technical and creative skillset of Ahonaf: Professional Video Editing, AI Video Production, CapCut, YouTube Retention, HTML5, CSS3, Three.js and JavaScript.">
+  <meta name="author" content="Ahonaf">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23171923'/><text x='50%' y='65%' font-family='sans-serif' font-size='50' font-weight='bold' fill='%234565F5' text-anchor='middle'>AR</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- External Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light-theme.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+        <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="nav-link active" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+        </div>
+
+        <button class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button id="audio-toggle-btn" class="btn-audio-toggle nav-desktop-only" aria-label="Toggle UI Audio Feedback" title="Toggle Sound Design">
+          <i data-lucide="volume-x"></i>
+        </button>
+
+        <div class="nav-clock nav-desktop-only" title="Local Time in Dhaka, Bangladesh (UTC+6)">
+          <div class="clock-dot"></div>
+          <span data-i18n="live_dhaka">DHAKA</span>
+          <span id="live-clock">12:00:00 PM</span>
+        </div>
+
+        <div class="magnetic-wrap nav-desktop-only">
+          <a href="contact.html" class="btn btn-primary magnetic-target">
+            <span data-i18n="nav_talk">LET'S TALK</span>
+            <i data-lucide="arrow-up-right" class="btn-icon"></i>
+          </a>
+        </div>
+
+        <button class="btn-hamburger" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu -->
+  <div id="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link"><span class="mobile-nav-num">01</span><span data-i18n="nav_home">Home</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link"><span class="mobile-nav-num">02</span><span data-i18n="nav_about">About</span></a></li>
+      <li><a href="skills.html" class="mobile-nav-link active"><span class="mobile-nav-num">03</span><span data-i18n="nav_skills">Skills</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link"><span class="mobile-nav-num">04</span><span data-i18n="nav_services">Services</span></a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link"><span class="mobile-nav-num">05</span><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-num">06</span><span data-i18n="nav_contact">Contact</span></a></li>
+    </ul>
+    <div class="mobile-controls-row">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+      </div>
+      <button class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode"><i data-lucide="moon"></i></button>
+    </div>
+    <div class="mobile-nav-footer">
+      <div class="eyebrow" data-i18n="eyebrow_worldwide">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+      <a href="mailto:mdahonafalrafi01@gmail.com" class="link-editorial">mdahonafalrafi01@gmail.com</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container page-header-content">
+        <div class="eyebrow">02 // CAPABILITIES &amp; CRAFT</div>
+        <h1 class="page-title text-chrome" data-i18n="skills_page_title">TECHNICAL MASTERY &amp; TOOLKIT</h1>
+        <p class="page-subtitle" data-i18n="skills_page_sub">
+          A comprehensive breakdown of post-production software, generative AI pipelines, and creative development technologies.
+        </p>
+      </div>
+    </header>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="page-section">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div style="display: flex; justify-content: center; margin-bottom: 3.5rem;">
+          <div class="filter-pills-row" role="tablist" aria-label="Skill Filters">
+            <button class="btn btn-tag skill-filter-btn active" data-filter="all" role="tab" data-i18n="tab_all">All</button>
+            <button class="btn btn-tag skill-filter-btn" data-filter="video" role="tab" data-i18n="tab_video">Video Editing</button>
+            <button class="btn btn-tag skill-filter-btn" data-filter="ai" role="tab" data-i18n="tab_ai">AI &amp; Tools</button>
+            <button class="btn btn-tag skill-filter-btn" data-filter="code" role="tab" data-i18n="tab_code">Design &amp; Tech</button>
+          </div>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- 1. Professional Video Editing -->
+          <div class="skill-card" data-category="video">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="video"></i></div>
+              <span class="skill-badge" data-i18n="skill1_badge">Cinema Grade</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill1_title">Professional Video Editing</h2>
+            <p class="skill-desc" data-i18n="skill1_desc">Multi-track non-linear editing, narrative rhythm, dynamic pacing, Hollywood-style sound layering, and color grading in DaVinci Resolve.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">AI Video Tools</span>
+              <span class="skill-tag-item">Automated Workflows</span>
+              <span class="skill-tag-item">Smart Production</span>
+              <span class="skill-tag-item">Prompt Ideation</span>
+            </div>
+          </div>
+
+          <!-- 2. AI Video Production -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="sparkles"></i></div>
+              <span class="skill-badge" data-i18n="skill2_badge">Next-Gen Pipeline</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill2_title">AI Video Production</h2>
+            <p class="skill-desc" data-i18n="skill2_desc">Generative cinematic video generation, consistent character prompting, camera motion control, and AI VFX integration with Runway Gen-3.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">YouTube Long-Form</span>
+              <span class="skill-tag-item">High Retention</span>
+              <span class="skill-tag-item">Pattern Interrupts</span>
+              <span class="skill-tag-item">Sound Design</span>
+            </div>
+          </div>
+
+          <!-- 3. AI Content Creation -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="brain"></i></div>
+              <span class="skill-badge" data-i18n="skill3_badge">Voice &amp; Vision</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill3_title">AI Content Creation</h2>
+            <p class="skill-desc" data-i18n="skill3_desc">Neural voice synthesis, AI audio mastering, script ideation, visual storyboard generation, and multi-platform automation.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">YouTube Shorts</span>
+              <span class="skill-tag-item">Facebook Reels</span>
+              <span class="skill-tag-item">Instagram Reels</span>
+              <span class="skill-tag-item">3s Hook Formula</span>
+            </div>
+          </div>
+
+          <!-- 4. YouTube Video Editing -->
+          <div class="skill-card" data-category="video">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="youtube"></i></div>
+              <span class="skill-badge" data-i18n="skill4_badge">High Retention</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill4_title">YouTube Video Editing</h2>
+            <p class="skill-desc" data-i18n="skill4_desc">Optimized for high retention rates and watch time. Pattern interrupts, seamless b-roll montage, kinetic titles, and sound design.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">Long-Form Retention</span>
+              <span class="skill-tag-item">Sound Design</span>
+              <span class="skill-tag-item">Title Animation</span>
+              <span class="skill-tag-item">Thumbnails</span>
+            </div>
+          </div>
+
+          <!-- 5. YouTube Shorts & Reels Editing -->
+          <div class="skill-card" data-category="video">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="smartphone"></i></div>
+              <span class="skill-badge" data-i18n="skill5_badge">Viral Velocity</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill5_title">YouTube Shorts &amp; Reels Editing</h2>
+            <p class="skill-desc" data-i18n="skill5_desc">Hook architecture in the first 3 seconds, millisecond-accurate jump cuts, dynamic motion captions, and algorithmic pacing.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">Viral Hooks</span>
+              <span class="skill-tag-item">Dynamic Subtitles</span>
+              <span class="skill-tag-item">9:16 Vertical</span>
+              <span class="skill-tag-item">Audio Trends</span>
+            </div>
+          </div>
+
+          <!-- 6. CapCut Pro -->
+          <div class="skill-card" data-category="video">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="scissors"></i></div>
+              <span class="skill-badge" data-i18n="skill6_badge">Rapid Turnaround</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill6_title">CapCut Pro</h2>
+            <p class="skill-desc" data-i18n="skill6_desc">High-speed professional social content delivery, keyframing, speed ramping, audio sync, and viral template customization.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">CapCut Desktop Pro</span>
+              <span class="skill-tag-item">Auto-Captions</span>
+              <span class="skill-tag-item">Speed Curves</span>
+              <span class="skill-tag-item">Masking</span>
+            </div>
+          </div>
+
+          <!-- 7. HTML5 Architecture -->
+          <div class="skill-card" data-category="code">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="code"></i></div>
+              <span class="skill-badge" data-i18n="skill7_badge">Semantic Standard</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill7_title">HTML5 Architecture</h2>
+            <p class="skill-desc" data-i18n="skill7_desc">Accessible, high-performance semantic markup, SEO metadata, canvas rendering contexts, and structured data standards.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">Marketing Creatives</span>
+              <span class="skill-tag-item">Social Media Banners</span>
+              <span class="skill-tag-item">YouTube Thumbnails</span>
+              <span class="skill-tag-item">Promo Graphics</span>
+            </div>
+          </div>
+
+          <!-- 8. CSS3 & Motion Design -->
+          <div class="skill-card" data-category="code">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="palette"></i></div>
+              <span class="skill-badge" data-i18n="skill8_badge">Modern Layouts</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill8_title">CSS3 &amp; Motion Design</h2>
+            <p class="skill-desc" data-i18n="skill8_desc">Fluid clamp() typography, CSS custom properties, 3D transforms, glassmorphic filters, and GPU-accelerated keyframe systems.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">AI Content Tools</span>
+              <span class="skill-tag-item">Script Ideation</span>
+              <span class="skill-tag-item">Voice Synthesis</span>
+              <span class="skill-tag-item">Visual Generation</span>
+            </div>
+          </div>
+
+          <!-- 9. Vanilla JavaScript & WebGL -->
+          <div class="skill-card" data-category="code">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap"><i data-lucide="terminal"></i></div>
+              <span class="skill-badge" data-i18n="skill9_badge">Interactive Systems</span>
+            </div>
+            <h2 class="skill-title" data-i18n="skill9_title">Vanilla JavaScript &amp; WebGL</h2>
+            <p class="skill-desc" data-i18n="skill9_desc">Three.js 3D environments, GSAP ScrollTrigger timelines, custom split-text typography algorithms, and Web Audio API synthesis.</p>
+            <div class="skill-tags">
+              <span class="skill-tag-item">Naogaon Polytechnic</span>
+              <span class="skill-tag-item">Diploma 6th Sem</span>
+              <span class="skill-tag-item">CST Engineering</span>
+              <span class="skill-tag-item">Tech Discipline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="page-section bg-alt">
+      <div class="container">
+        <div class="card-surface" style="padding: 4.5rem 3rem; border-radius: var(--radius-xl); text-align: center; max-width: 900px; margin: 0 auto;">
+          <h2 class="section-title text-chrome" data-i18n="cta_banner_title" style="margin-bottom: 1.5rem;">
+            LET'S CREATE SOMETHING AMAZING.
+          </h2>
+          <p class="page-subtitle" data-i18n="cta_banner_desc" style="max-width: 600px; margin: 0 auto 2.5rem;">
+            Have an ambitious vision, a YouTube channel to scale, or an AI-driven campaign to direct? Let's connect today.
+          </p>
+          <div class="hero-cta-group" style="justify-content: center; margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary">
+              <span data-i18n="btn_connect">LET'S CONNECT</span>
+              <i data-lucide="arrow-up-right" class="btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container-wide">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+          <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="footer-nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="footer-nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="footer-nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="footer-nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <button class="btn-back-to-top" aria-label="Scroll back to top" title="Back to Top">
+          <svg class="progress-ring" width="50" height="50" viewBox="0 0 54 54">
+            <circle class="progress-ring-circle" stroke-width="2.5" fill="transparent" r="25" cx="27" cy="27" />
+          </svg>
+          <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_copyright">&copy; 2026 AHONAF. ALL RIGHTS RESERVED.</div>
+        <div class="eyebrow" data-i18n="footer_tagline">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/typography.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

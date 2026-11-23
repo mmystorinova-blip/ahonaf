@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>About ✦ AHONAF | Video Editor &amp; Creative Developer</title>
+  <meta name="description" content="Learn about Ahonaf, a multidisciplinary video editor, generative AI creator, and creative technologist based in Dhaka, Bangladesh.">
+  <meta name="author" content="Ahonaf">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23171923'/><text x='50%' y='65%' font-family='sans-serif' font-size='50' font-weight='bold' fill='%234565F5' text-anchor='middle'>AR</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- External Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light-theme.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+        <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="nav-link active" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+        </div>
+
+        <button class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button id="audio-toggle-btn" class="btn-audio-toggle nav-desktop-only" aria-label="Toggle UI Audio Feedback" title="Toggle Sound Design">
+          <i data-lucide="volume-x"></i>
+        </button>
+
+        <div class="nav-clock nav-desktop-only" title="Local Time in Dhaka, Bangladesh (UTC+6)">
+          <div class="clock-dot"></div>
+          <span data-i18n="live_dhaka">DHAKA</span>
+          <span id="live-clock">12:00:00 PM</span>
+        </div>
+
+        <div class="magnetic-wrap nav-desktop-only">
+          <a href="contact.html" class="btn btn-primary magnetic-target">
+            <span data-i18n="nav_talk">LET'S TALK</span>
+            <i data-lucide="arrow-up-right" class="btn-icon"></i>
+          </a>
+        </div>
+
+        <button class="btn-hamburger" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu -->
+  <div id="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link"><span class="mobile-nav-num">01</span><span data-i18n="nav_home">Home</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link active"><span class="mobile-nav-num">02</span><span data-i18n="nav_about">About</span></a></li>
+      <li><a href="skills.html" class="mobile-nav-link"><span class="mobile-nav-num">03</span><span data-i18n="nav_skills">Skills</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link"><span class="mobile-nav-num">04</span><span data-i18n="nav_services">Services</span></a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link"><span class="mobile-nav-num">05</span><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-num">06</span><span data-i18n="nav_contact">Contact</span></a></li>
+    </ul>
+    <div class="mobile-controls-row">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+      </div>
+      <button class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode"><i data-lucide="moon"></i></button>
+    </div>
+    <div class="mobile-nav-footer">
+      <div class="eyebrow" data-i18n="eyebrow_worldwide">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+      <a href="mailto:mdahonafalrafi01@gmail.com" class="link-editorial">mdahonafalrafi01@gmail.com</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container page-header-content">
+        <div class="eyebrow">01 // EDITORIAL PROFILE</div>
+        <h1 class="page-title text-chrome" data-i18n="about_page_title">ABOUT ME &amp; MY CRAFT</h1>
+        <p class="page-subtitle" data-i18n="about_page_sub">
+          Video Editor &amp; AI Content Creator based in Bangladesh. Currently studying Computer Science &amp; Technology.
+        </p>
+      </div>
+    </header>
+
+    <!-- NARRATIVE BIOGRAPHY -->
+    <section class="page-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual-col">
+            <div class="about-editorial-frame">
+              <div class="about-editorial-inner">
+                <img src="assets/images/about.jpg" alt="Ahonaf Studio" class="about-image" loading="lazy">
+                <div class="about-info-overlay">
+                  <div class="about-location-tag">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    <span data-i18n="about_location_tag">BANGLADESH ✦ AVAILABLE FOR FREELANCE &amp; REMOTE WORK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content-col">
+            <h2 class="editorial-headline text-chrome" data-i18n="about_teaser_title">
+              CRAFTING STORIES AT THE INTERSECTION OF CINEMA, AI &amp; CODE
+            </h2>
+
+            <p class="about-lead" data-i18n="about_bio_p1">
+              I am a multidisciplinary visual creator and creative technologist dedicated to breaking the boundaries of digital media. Over the past 5+ years, I have honed the craft of combining psychological viewer-retention mechanics with Hollywood-grade post-production aesthetics.
+            </p>
+
+            <p class="about-lead" data-i18n="about_bio_p2">
+              As generative AI transformed video creation, I pioneered automated and semi-automated production pipelines using Runway, Midjourney, ComfyUI, and ElevenLabs—allowing rapid, high-fidelity storytelling for visionary creators and modern brands worldwide.
+            </p>
+
+            <!-- 3 Core Pillars -->
+            <div class="about-pillars">
+              <div class="pillar-card">
+                <i data-lucide="film" class="pillar-icon"></i>
+                <h3 class="pillar-title" data-i18n="pillar1_title">Visual Storytelling</h3>
+                <p class="pillar-desc" data-i18n="pillar1_desc">Cinema-grade pacing, precision sound design, and color grading in DaVinci Resolve.</p>
+              </div>
+
+              <div class="pillar-card">
+                <i data-lucide="cpu" class="pillar-icon"></i>
+                <h3 class="pillar-title" data-i18n="pillar2_title">Generative AI</h3>
+                <p class="pillar-desc" data-i18n="pillar2_desc">State-of-the-art AI video pipelines with Runway Gen-3, Midjourney, and ComfyUI.</p>
+              </div>
+
+              <div class="pillar-card">
+                <i data-lucide="code-2" class="pillar-icon"></i>
+                <h3 class="pillar-title" data-i18n="pillar3_title">Creative Code</h3>
+                <p class="pillar-desc" data-i18n="pillar3_desc">Bespoke interactive 3D web experiences using Three.js, GSAP, and modern web standards.</p>
+              </div>
+            </div>
+
+            <!-- Verified Metrics Strip -->
+            <div class="metrics-strip">
+              <div class="metric-item">
+                <div class="metric-val text-chrome" data-target="50" data-suffix="+">50+</div>
+                <div class="metric-label" data-i18n="stats_views">ORGANIC VIEWS GENERATED</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-val text-chrome" data-target="20" data-suffix="+">20+</div>
+                <div class="metric-label" data-i18n="stats_projects">HIGH-IMPACT DELIVERABLES</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-val text-gradient-blue" data-target="100" data-suffix="%">100%<</div>
+                <div class="metric-label" data-i18n="stats_retention">RETENTION &amp; SATISFACTION</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE JOURNEY TIMELINE -->
+    <section class="page-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header-left">
+            <div class="eyebrow" data-i18n="journey_eyebrow">MILESTONES &amp; EVOLUTION</div>
+            <h2 class="section-title text-chrome" data-i18n="journey_title">THE CREATIVE ODYSSEY</h2>
+          </div>
+          <div class="eyebrow eyebrow-violet">2021 — 2026+</div>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-spine">
+            <div class="timeline-progress-fill"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content-card">
+              <div class="timeline-date" data-i18n="phase1_date">PHASE 01 // 2021 - 2022</div>
+              <h3 class="timeline-milestone text-chrome" data-i18n="phase1_title">Foundations in Motion &amp; Cinema</h3>
+              <p class="timeline-narrative" data-i18n="phase1_desc">
+                Mastered non-linear editing in Adobe Premiere Pro and color science in DaVinci Resolve Studio. Built a deep intuition for rhythm, narrative beats, and audio architecture.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item-right">
+            <div class="timeline-node"></div>
+            <div class="timeline-content-card">
+              <div class="timeline-date" data-i18n="phase2_date">PHASE 02 // 2022 - 2023</div>
+              <h3 class="timeline-milestone text-chrome" data-i18n="phase2_title">Viral Velocity &amp; Short-Form Revolution</h3>
+              <p class="timeline-narrative" data-i18n="phase2_desc">
+                Pioneered high-retention frameworks on YouTube Shorts, TikTok, and Reels. Engineered rapid mobile production workflows using CapCut Pro alongside After Effects motion graphics.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content-card">
+              <div class="timeline-date" data-i18n="phase3_date">PHASE 03 // 2023 - 2025</div>
+              <h3 class="timeline-milestone text-chrome" data-i18n="phase3_title">The Generative AI Frontier</h3>
+              <p class="timeline-narrative" data-i18n="phase3_desc">
+                Early adopter of generative AI video pipelines. Integrated Runway Gen-2/3, Midjourney, ComfyUI, and ElevenLabs into production workflows, scaling commercial output tenfold.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item-right">
+            <div class="timeline-node"></div>
+            <div class="timeline-content-card">
+              <div class="timeline-date" data-i18n="phase4_date">PHASE 04 // 2025 - 2026+</div>
+              <h3 class="timeline-milestone text-chrome" data-i18n="phase4_title">Creative Technologist &amp; WebGL Architect</h3>
+              <p class="timeline-narrative" data-i18n="phase4_desc">
+                Converging cinematic video storytelling with interactive 3D code. Building award-winning digital experiences using Three.js, GSAP, and modern vanilla JavaScript architecture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="page-section">
+      <div class="container">
+        <div class="card-surface" style="padding: 4.5rem 3rem; border-radius: var(--radius-xl); text-align: center; max-width: 900px; margin: 0 auto;">
+          <h2 class="section-title text-chrome" data-i18n="cta_banner_title" style="margin-bottom: 1.5rem;">
+            LET'S CREATE SOMETHING AMAZING.
+          </h2>
+          <p class="page-subtitle" data-i18n="cta_banner_desc" style="max-width: 600px; margin: 0 auto 2.5rem;">
+            Have an ambitious vision, a YouTube channel to scale, or an AI-driven campaign to direct? Let's connect today.
+          </p>
+          <div class="hero-cta-group" style="justify-content: center; margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary">
+              <span data-i18n="btn_connect">LET'S CONNECT</span>
+              <i data-lucide="arrow-up-right" class="btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container-wide">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+          <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="footer-nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="footer-nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="footer-nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="footer-nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <button class="btn-back-to-top" aria-label="Scroll back to top" title="Back to Top">
+          <svg class="progress-ring" width="50" height="50" viewBox="0 0 54 54">
+            <circle class="progress-ring-circle" stroke-width="2.5" fill="transparent" r="25" cx="27" cy="27" />
+          </svg>
+          <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_copyright">&copy; 2026 AHONAF. ALL RIGHTS RESERVED.</div>
+        <div class="eyebrow" data-i18n="footer_tagline">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/typography.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

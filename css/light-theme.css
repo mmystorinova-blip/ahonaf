@@ -1,0 +1,115 @@
+/* ==========================================================================
+   PREMIUM LIGHT THEME SPECIFIC STYLES
+   Minimalist luxury, pure whites, soft off-whites, electric blue, soft violet
+   ========================================================================== */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+/* Card Surface Depth */
+[data-theme="light"] .card-surface,
+[data-theme="light"] .skill-card,
+[data-theme="light"] .service-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .pillar-card,
+[data-theme="light"] .timeline-content-card,
+[data-theme="light"] .contact-method-card,
+[data-theme="light"] .contact-form-wrap,
+[data-theme="light"] .modal-dialog {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .card-surface:hover,
+[data-theme="light"] .skill-card:hover,
+[data-theme="light"] .service-card:hover,
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .pillar-card:hover,
+[data-theme="light"] .timeline-content-card:hover,
+[data-theme="light"] .contact-method-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-metallic);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Section Contrast Alternation */
+[data-theme="light"] .bg-alt {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Navbar Scrolled State */
+[data-theme="light"] #navbar.nav-scrolled {
+  background: var(--bg-nav-scrolled);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px -2px rgba(23, 25, 35, 0.05);
+}
+
+[data-theme="light"] .nav-links {
+  background: rgba(248, 249, 252, 0.85);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Buttons in Light Mode */
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #171923 0%, #2D3748 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(23, 25, 35, 0.2);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: linear-gradient(135deg, #4565F5 0%, #8265E8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(69, 101, 245, 0.35);
+}
+
+[data-theme="light"] .btn-secondary {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: rgba(69, 101, 245, 0.04);
+}
+
+/* Form Inputs in Light Mode */
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea {
+  background: #F8F9FC;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] .form-textarea:focus {
+  background: #FFFFFF;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(69, 101, 245, 0.15);
+}
+
+/* Footer in Light Mode */
+[data-theme="light"] #footer {
+  background: #F8F9FC;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Section Marquee in Light Mode */
+[data-theme="light"] .section-marquee {
+  background: #F1F3F7;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}

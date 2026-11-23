@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AHONAF ✦ Ultra Admin Panel</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo-clean.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. LOGIN SCREEN OVERLAY (When Not Logged In)
+       ======================================================================== -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="../assets/images/logo-clean.png" alt="AR Logo">
+        <h1>PORTFOLIO CONTROL</h1>
+        <p>Restricted Area // Ahonaf Administration</p>
+      </div>
+
+      <div id="login-error" class="login-error">
+        <span id="login-error-text">Invalid username or password</span>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="login-username">Admin Username</label>
+          <input type="text" id="login-username" class="form-input" placeholder="e.g. admin" required autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Admin Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          <i data-lucide="lock" style="width: 18px; height: 18px;"></i>
+          <span>ENTER CONTROL SYSTEM</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. ADMIN APPLICATION SHELL
+       ======================================================================== -->
+  <div id="admin-app" style="display: none;">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <img src="../assets/images/logo-clean.png" alt="AR Logo">
+          <span class="sidebar-brand-text">AHONAF</span>
+        </a>
+        <span class="sidebar-badge">CORE v2.0</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item active" data-tab="dashboard">
+          <i data-lucide="layout-dashboard"></i>
+          <span>Dashboard</span>
+        </div>
+
+        <div class="nav-item" data-tab="profile">
+          <i data-lucide="user"></i>
+          <span>Profile & Hero</span>
+        </div>
+
+        <div class="nav-item" data-tab="projects">
+          <i data-lucide="film"></i>
+          <span>Projects</span>
+          <span class="nav-counter" id="sidebar-projects-count">6</span>
+        </div>
+
+        <div class="nav-item" data-tab="services">
+          <i data-lucide="briefcase"></i>
+          <span>Services</span>
+        </div>
+
+        <div class="nav-item" data-tab="skills">
+          <i data-lucide="cpu"></i>
+          <span>Skills & Tools</span>
+        </div>
+
+        <div class="nav-item" data-tab="marquee">
+          <i data-lucide="repeat"></i>
+          <span>Marquee Ticker</span>
+        </div>
+
+        <div class="nav-item" data-tab="messages">
+          <i data-lucide="mail"></i>
+          <span>Inquiries</span>
+          <span class="nav-counter unread-badge" id="sidebar-unread-count" style="display: none;">0</span>
+        </div>
+
+        <div class="nav-item" data-tab="security">
+          <i data-lucide="shield-check"></i>
+          <span>Security & Backup</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-user-info">
+          <div class="admin-avatar">A</div>
+          <div>
+            <div class="admin-user-name" id="sidebar-admin-name">Admin</div>
+            <div style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: var(--text-muted);">
+              <span class="admin-status-dot"></span> Live Connected
+            </div>
+          </div>
+        </div>
+        <button id="btn-logout" class="btn btn-secondary btn-sm" title="Sign Out">
+          <i data-lucide="log-out" style="width: 15px; height: 15px;"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW AREA -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+          </button>
+          <h2 class="topbar-title" id="topbar-section-title">Dashboard Overview</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <a href="../index.html" target="_blank" class="btn btn-secondary btn-sm">
+            <i data-lucide="external-link" style="width: 15px; height: 15px;"></i>
+            <span>View Live Site</span>
+          </a>
+          <button id="btn-quick-save" class="btn btn-primary btn-sm">
+            <i data-lucide="save" style="width: 15px; height: 15px;"></i>
+            <span>Publish Changes</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB CONTENT CONTAINER -->
+      <div class="admin-content">
+
+        <!-- ==============================================================
+             TAB 1: DASHBOARD OVERVIEW
+             ============================================================== -->
+        <section id="tab-dashboard" class="admin-tab active">
+          <!-- STATS GRID -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-box cyan">
+                <i data-lucide="film"></i>
+              </div>
+              <div class="stat-info">
+                <h3 id="stat-projects-count">0</h3>
+                <p>Total Projects</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box blue">
+                <i data-lucide="briefcase"></i>
+              </div>
+              <div class="stat-info">
+                <h3 id="stat-services-count">0</h3>
+                <p>Active Services</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box purple">
+                <i data-lucide="cpu"></i>
+              </div>
+              <div class="stat-info">
+                <h3 id="stat-skills-count">0</h3>
+                <p>Skills & Software</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box green">
+                <i data-lucide="inbox"></i>
+              </div>
+              <div class="stat-info">
+                <h3 id="stat-messages-count">0</h3>
+                <p>Client Inquiries</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RECENT INQUIRIES PREVIEW -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="mail"></i>
+                  <span>Recent Client Inquiries</span>
+                </h3>
+                <p class="card-subtitle">Form submissions received from contact.html</p>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="switchTab('messages')">
+                <span>View All Inquiries</span>
+                <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Client Name</th>
+                    <th>Email</th>
+                    <th>Service</th>
+                    <th>Budget</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-recent-messages">
+                  <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading inquiries...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- QUICK SHORTCUTS -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i data-lucide="zap"></i>
+                <span>Quick Actions</span>
+              </h3>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-secondary" onclick="openProjectModal()">
+                <i data-lucide="plus-circle" style="width: 16px; height: 16px;"></i>
+                <span>Add New Project</span>
+              </button>
+              <button class="btn btn-secondary" onclick="switchTab('profile')">
+                <i data-lucide="image" style="width: 16px; height: 16px;"></i>
+                <span>Update Profile Picture</span>
+              </button>
+              <button class="btn btn-secondary" onclick="switchTab('marquee')">
+                <i data-lucide="repeat" style="width: 16px; height: 16px;"></i>
+                <span>Edit Marquee Ticker</span>
+              </button>
+              <button class="btn btn-secondary" onclick="exportBackupData()">
+                <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                <span>Download Backup</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 2: PROFILE & HERO SETTINGS
+             ============================================================== -->
+        <section id="tab-profile" class="admin-tab">
+          <form id="profile-form">
+            <!-- PROFILE IMAGE CARD -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i data-lucide="image"></i>
+                  <span>Profile Portrait & Branding</span>
+                </h3>
+              </div>
+
+              <div class="image-upload-wrap">
+                <div class="image-preview-box" id="profile-img-preview-box">
+                  <img src="../assets/images/profile.png" id="profile-img-preview" alt="Preview">
+                </div>
+                <div class="upload-actions">
+                  <label class="form-label">Profile Portrait Photo (1:1 Ratio Recommended)</label>
+                  <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                    Upload a high-resolution photo. It automatically shows on Home, About, and all pages with the signature neon glow!
+                  </p>
+                  <input type="file" id="profile-img-input" accept="image/*">
+                  <div style="display: flex; gap: 0.75rem;">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('profile-img-input').click()">
+                      <i data-lucide="upload" style="width: 14px; height: 14px;"></i>
+                      <span>Upload New Picture</span>
+                    </button>
+                    <input type="text" id="profile-img-path" class="form-input" style="max-width: 280px;" placeholder="assets/images/profile.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- NAME & TITLES -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i data-lucide="user"></i>
+                  <span>Personal & Hero Information</span>
+                </h3>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Full Display Name</label>
+                  <input type="text" id="profile-name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Short Name / Brand Monogram</label>
+                  <input type="text" id="profile-short-name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Professional Role <span class="lang-tag">EN</span></label>
+                  <input type="text" id="profile-role" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Professional Role <span class="lang-tag">BN</span></label>
+                  <input type="text" id="profile-role-bn" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Hero Title Line 1 <span class="lang-tag">EN</span></label>
+                  <input type="text" id="hero-title-1" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Hero Title Line 1 <span class="lang-tag">BN</span></label>
+                  <input type="text" id="hero-title-1-bn" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Hero Title Line 2 <span class="lang-tag">EN</span></label>
+                  <input type="text" id="hero-title-2" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Hero Title Line 2 <span class="lang-tag">BN</span></label>
+                  <input type="text" id="hero-title-2-bn" class="form-input">
+                </div>
+
+                <div class="form-group full-width">
+                  <label class="form-label">Hero Bio Statement <span class="lang-tag">EN</span></label>
+                  <textarea id="hero-bio" class="form-textarea" rows="3"></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                  <label class="form-label">Hero Bio Statement <span class="lang-tag">BN</span></label>
+                  <textarea id="hero-bio-bn" class="form-textarea" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Availability Status <span class="lang-tag">EN</span></label>
+                  <input type="text" id="profile-status" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Availability Status <span class="lang-tag">BN</span></label>
+                  <input type="text" id="profile-status-bn" class="form-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- SOCIAL & CONTACT DETAILS -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i data-lucide="share-2"></i>
+                  <span>Official Social Links & Contact Channels</span>
+                </h3>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">WhatsApp Number</label>
+                  <input type="text" id="profile-whatsapp" class="form-input" placeholder="01576749300">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Facebook Profile URL</label>
+                  <input type="url" id="profile-facebook" class="form-input" placeholder="https://www.facebook.com/mdahonafalrafi73">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram Profile URL</label>
+                  <input type="url" id="profile-instagram" class="form-input" placeholder="https://www.instagram.com/mdahonafalrafi73/">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Public Email Address</label>
+                  <input type="email" id="profile-email" class="form-input" placeholder="mdahonafalrafi73@gmail.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="text" id="profile-phone" class="form-input" placeholder="01576749300">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Location / City</label>
+                  <input type="text" id="profile-location" class="form-input" placeholder="Bangladesh">
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                <button type="submit" class="btn btn-primary">
+                  <i data-lucide="save" style="width: 16px; height: 16px;"></i>
+                  <span>Save Profile & Social Links</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- ==============================================================
+             TAB 3: PROJECTS MANAGEMENT
+             ============================================================== -->
+        <section id="tab-projects" class="admin-tab">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="film"></i>
+                  <span>Portfolio Projects & Case Studies</span>
+                </h3>
+                <p class="card-subtitle">Manage projects showcased in Selected Archive and Project Details</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openProjectModal()">
+                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+                <span>Add New Project</span>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Thumb</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Client</th>
+                    <th>Tools</th>
+                    <th>Featured</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="projects-table-body">
+                  <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading projects...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 4: SERVICES MANAGEMENT
+             ============================================================== -->
+        <section id="tab-services" class="admin-tab">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="briefcase"></i>
+                  <span>Core Production Services</span>
+                </h3>
+                <p class="card-subtitle">Manage service packages, deliverables, and tools</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openServiceModal()">
+                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+                <span>Add Service</span>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Service Name (EN)</th>
+                    <th>Service Name (BN)</th>
+                    <th>Tools Used</th>
+                    <th>Deliverables</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="services-table-body">
+                  <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Loading services...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 5: SKILLS MANAGEMENT
+             ============================================================== -->
+        <section id="tab-skills" class="admin-tab">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="cpu"></i>
+                  <span>Skills, Tools & Software Proficiency</span>
+                </h3>
+                <p class="card-subtitle">Add or edit tool proficiency displayed on skills.html</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openSkillModal()">
+                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+                <span>Add Skill</span>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Software / Skill</th>
+                    <th>Category</th>
+                    <th>Proficiency Level</th>
+                    <th>Featured Highlight</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="skills-table-body">
+                  <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Loading skills...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 6: MARQUEE TICKER MANAGEMENT
+             ============================================================== -->
+        <section id="tab-marquee" class="admin-tab">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="repeat"></i>
+                  <span>Kinetic Marquee Banner Ticker</span>
+                </h3>
+                <p class="card-subtitle">Manage animated ticker slogans rolling under the hero section</p>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="addMarqueeItem()">
+                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+                <span>Add Phrase</span>
+              </button>
+            </div>
+
+            <div id="marquee-items-list" style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <!-- Marquee items populated via JS -->
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+              <button type="button" class="btn btn-primary" onclick="saveMarqueeSettings()">
+                <i data-lucide="save" style="width: 16px; height: 16px;"></i>
+                <span>Save Marquee Ticker</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 7: MESSAGES & CLIENT INQUIRIES
+             ============================================================== -->
+        <section id="tab-messages" class="admin-tab">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="mail"></i>
+                  <span>Client Inquiries Inbox</span>
+                </h3>
+                <p class="card-subtitle">Real inquiries received through contact.html</p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secondary btn-sm" onclick="filterMessages('all')">All</button>
+                <button class="btn btn-secondary btn-sm" onclick="filterMessages('unread')">Unread</button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Service</th>
+                    <th>Budget</th>
+                    <th>Message Details</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="messages-table-body">
+                  <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Loading messages...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             TAB 8: SECURITY & BACKUP
+             ============================================================== -->
+        <section id="tab-security" class="admin-tab">
+          <!-- CHANGE PASSWORD CARD -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i data-lucide="key"></i>
+                <span>Change Admin Password</span>
+              </h3>
+            </div>
+
+            <form id="password-form" style="max-width: 480px;">
+              <div class="form-group">
+                <label class="form-label">Current Admin Password</label>
+                <input type="password" id="current-password" class="form-input" required autocomplete="current-password">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">New Admin Username (Optional)</label>
+                <input type="text" id="new-username" class="form-input" placeholder="Leave blank to keep current">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">New Admin Password</label>
+                <input type="password" id="new-password" class="form-input" minlength="6" required autocomplete="new-password">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Confirm New Password</label>
+                <input type="password" id="confirm-password" class="form-input" minlength="6" required autocomplete="new-password">
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+                <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+                <span>Update Credentials</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- BACKUP & RESTORE -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i data-lucide="hard-drive"></i>
+                <span>Site Backup & Restore</span>
+              </h3>
+            </div>
+
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Download a complete snapshot of all projects, services, skills, bio, marquee, and messages as a portable JSON file.
+            </p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="exportBackupData()">
+                <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                <span>Export Full Backup (.json)</span>
+              </button>
+
+              <label class="btn btn-secondary" style="cursor: pointer;">
+                <i data-lucide="upload" style="width: 16px; height: 16px;"></i>
+                <span>Restore Backup (.json)</span>
+                <input type="file" id="restore-file-input" accept=".json" style="display: none;" onchange="importBackupData(event)">
+              </label>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       3. MODALS (PROJECT / SERVICE / SKILL)
+       ======================================================================== -->
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="project-modal-title">Edit Project</h3>
+        <button class="modal-close" onclick="closeProjectModal()"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="project-form">
+          <input type="hidden" id="proj-id">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Project Title <span class="lang-tag">EN</span></label>
+              <input type="text" id="proj-title" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Project Title <span class="lang-tag">BN</span></label>
+              <input type="text" id="proj-title-bn" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Category <span class="lang-tag">EN</span></label>
+              <input type="text" id="proj-category" class="form-input" placeholder="e.g. AI VIDEO PRODUCTION" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Category <span class="lang-tag">BN</span></label>
+              <input type="text" id="proj-category-bn" class="form-input" placeholder="e.g. এআই ভিডিও প্রোডাকশন">
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Project Thumbnail Image</label>
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <input type="text" id="proj-image" class="form-input" placeholder="assets/images/project-1.jpg" required>
+                <input type="file" id="proj-image-file" accept="image/*" style="display: none;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('proj-image-file').click()">Upload</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Client Name</label>
+              <input type="text" id="proj-client" class="form-input" placeholder="e.g. YouTube Creator Channel">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Timeline / Duration</label>
+              <input type="text" id="proj-timeline" class="form-input" placeholder="e.g. 1 Week Sprint">
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Tools Used (comma separated)</label>
+              <input type="text" id="proj-tools" class="form-input" placeholder="Runway Gen-3, CapCut, Sound Design">
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Deliverables</label>
+              <input type="text" id="proj-deliverables" class="form-input" placeholder="4K Master, 9:16 Cuts, Sound FX">
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Short Summary Description <span class="lang-tag">EN</span></label>
+              <textarea id="proj-desc" class="form-textarea" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Short Summary Description <span class="lang-tag">BN</span></label>
+              <textarea id="proj-desc-bn" class="form-textarea" rows="2"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Case Study Challenge <span class="lang-tag">EN</span></label>
+              <textarea id="proj-challenge-en" class="form-textarea" rows="2"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Case Study Solution <span class="lang-tag">EN</span></label>
+              <textarea id="proj-solution-en" class="form-textarea" rows="2"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <input type="checkbox" id="proj-featured">
+                <span style="font-size: 0.88rem; font-weight: 600;">Show in Home Page Featured Productions</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeProjectModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="saveProjectForm()">Save Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE MODAL -->
+  <div class="modal-backdrop" id="service-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="service-modal-title">Edit Service</h3>
+        <button class="modal-close" onclick="closeServiceModal()"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="service-form">
+          <input type="hidden" id="service-id">
+          <div class="form-group">
+            <label class="form-label">Service Title <span class="lang-tag">EN</span></label>
+            <input type="text" id="service-title" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service Title <span class="lang-tag">BN</span></label>
+            <input type="text" id="service-title-bn" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description <span class="lang-tag">EN</span></label>
+            <textarea id="service-desc" class="form-textarea" rows="2" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description <span class="lang-tag">BN</span></label>
+            <textarea id="service-desc-bn" class="form-textarea" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tools Used (comma separated)</label>
+            <input type="text" id="service-tools" class="form-input" placeholder="CapCut Pro, Premiere Pro, Audition">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Deliverables</label>
+            <input type="text" id="service-deliverable" class="form-input" placeholder="1080p / 4K YouTube Ready Cut">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeServiceModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="saveServiceForm()">Save Service</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL MODAL -->
+  <div class="modal-backdrop" id="skill-modal">
+    <div class="modal-window" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="skill-modal-title">Add / Edit Skill</h3>
+        <button class="modal-close" onclick="closeSkillModal()"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="skill-form">
+          <input type="hidden" id="skill-orig-name">
+          <div class="form-group">
+            <label class="form-label">Skill / Software Name</label>
+            <input type="text" id="skill-name" class="form-input" placeholder="e.g. CapCut Pro" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select id="skill-category" class="form-select">
+              <option value="editing">Video Editing</option>
+              <option value="motion">Motion Graphics</option>
+              <option value="ai">AI Content Tools</option>
+              <option value="graphics">Graphic Design</option>
+              <option value="audio">Audio & Sound</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Proficiency Level</label>
+            <select id="skill-level" class="form-select">
+              <option value="Expert">Expert</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Intermediate">Intermediate</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="skill-highlight">
+              <span style="font-size: 0.88rem; font-weight: 600;">Highlight this skill</span>
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeSkillModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="saveSkillForm()">Save Skill</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- SCRIPT -->
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM - BILINGUAL (BANGLA & ENGLISH) & DUAL-THEME
+   Bangla: Hind Siliguri (300, 400, 500, 600, 700)
+   English: Syne (Display), Space Grotesk (Primary), Inter (Body)
+   ========================================================================== */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+:root {
+  /* Font Families - English Defaults */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-bangla: 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Fluid Clamp Scales */
+  --text-hero: clamp(2.6rem, 3.2vw + 0.4rem, 7rem);
+  --text-hero-sub: clamp(1.05rem, 1.8vw + 0.2rem, 1.6rem);
+  --text-section-title: clamp(2.2rem, 4.5vw + 0.3rem, 4.75rem);
+  --text-editorial: clamp(1.5rem, 2.8vw + 0.3rem, 2.85rem);
+  --text-h2: clamp(1.75rem, 2.8vw + 0.3rem, 2.65rem);
+  --text-h3: clamp(1.2rem, 1.6vw + 0.15rem, 1.65rem);
+  --text-h4: clamp(1.05rem, 1.2vw + 0.1rem, 1.3rem);
+  --text-body-lg: clamp(1.05rem, 1.1vw + 0.15rem, 1.25rem);
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-tag: 0.75rem;
+  --text-mono-lg: clamp(2rem, 3.5vw, 3.8rem);
+
+  /* Line Heights */
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-title: 1.25;
+  --lh-body: 1.68;
+  --lh-relaxed: 1.82;
+
+  /* Letter Spacing */
+  --ls-tighter: -0.04em;
+  --ls-tight: -0.02em;
+  --ls-normal: 0em;
+  --ls-wide: 0.04em;
+  --ls-wider: 0.12em;
+  --ls-widest: 0.2em;
+}
+
+/* ==========================================================================
+   LANGUAGE-DEPENDENT TYPOGRAPHY SWITCHING
+   ========================================================================== */
+
+/* --- Bangla (বাংলা) Mode --- */
+html[lang="bn"] body,
+html[lang="bn"] p,
+html[lang="bn"] span,
+html[lang="bn"] a,
+html[lang="bn"] button,
+html[lang="bn"] input,
+html[lang="bn"] textarea,
+html[lang="bn"] select {
+  font-family: var(--font-bangla) !important;
+  line-height: var(--lh-relaxed);
+  letter-spacing: normal !important;
+}
+
+html[lang="bn"] h1,
+html[lang="bn"] h2,
+html[lang="bn"] h3,
+html[lang="bn"] h4,
+html[lang="bn"] h5,
+html[lang="bn"] h6,
+html[lang="bn"] .hero-title,
+html[lang="bn"] .hero-title-line,
+html[lang="bn"] .section-title,
+html[lang="bn"] .editorial-headline {
+  font-family: var(--font-bangla) !important;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0 !important;
+  word-break: break-word;
+}
+
+/* Bangla hero headline must not be clipped/split */
+html[lang="bn"] .hero-title {
+  font-size: clamp(2rem, 5vw + 0.5rem, 5rem);
+}
+
+html[lang="bn"] .hero-title-line {
+  -webkit-text-fill-color: unset;
+  color: inherit;
+}
+
+html[lang="bn"] .nav-link,
+html[lang="bn"] .btn,
+html[lang="bn"] .eyebrow,
+html[lang="bn"] .badge-label,
+html[lang="bn"] .hero-role-badge {
+  font-family: var(--font-bangla) !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 600;
+}
+
+/* Bangla section titles — slightly smaller to prevent overflow */
+html[lang="bn"] .section-title {
+  font-size: clamp(1.6rem, 3.5vw + 0.3rem, 3.5rem);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Badge values in Bangla need proper size */
+html[lang="bn"] .badge-value {
+  font-family: var(--font-bangla) !important;
+  font-size: 0.9rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Marquee in Bangla */
+html[lang="bn"] .marquee-item {
+  font-family: var(--font-bangla);
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+}
+
+/* --- English Mode --- */
+html[lang="en"] body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-normal);
+}
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] .hero-title,
+html[lang="en"] .section-title,
+html[lang="en"] .editorial-headline {
+  font-family: var(--font-display);
+  /* font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight); */
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0 !important;
+  word-break: break-word;
+}
+
+html[lang="en"] .eyebrow,
+html[lang="en"] .hero-role-badge,
+html[lang="en"] .nav-link,
+html[lang="en"] .btn,
+html[lang="en"] .badge-label {
+  font-family: var(--font-primary);
+}
+
+/* ==========================================================================
+   DISPLAY & EDITORIAL HEADLINES
+   ========================================================================== */
+.hero-title {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Each line of the hero title - animatable independently */
+.hero-title-line {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* Chrome gradient applies to child lines too */
+[data-theme="light"] .text-chrome .hero-title-line,
+[data-theme="dark"] .text-chrome .hero-title-line {
+  background: inherit;
+  background-clip: inherit;
+  -webkit-background-clip: inherit;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: var(--text-hero-sub);
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.section-title {
+  font-size: var(--text-section-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.section-title-sm {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.editorial-headline {
+  font-size: var(--text-editorial);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* --- Editorial Eyebrows & Tags --- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--text-tag);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  color: var(--accent-blue);
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+
+.eyebrow-violet {
+  color: var(--accent-violet);
+}
+
+.eyebrow-violet::before {
+  background: var(--accent-violet);
+  box-shadow: 0 0 8px var(--accent-violet);
+}
+
+/* ==========================================================================
+   METALLIC CHROME & GRADIENT TEXT (LIGHT & DARK ADAPTED)
+   ========================================================================== */
+
+/* Light Theme Metallic Text */
+[data-theme="light"] .text-chrome,
+[data-theme="light"] .text-chrome .split-char,
+[data-theme="light"] .text-chrome .split-word,
+[data-theme="light"] .text-chrome .hero-title-line {
+  background: linear-gradient(
+    135deg,
+    #171923 0%,
+    #4565F5 30%,
+    #8265E8 60%,
+    #171923 90%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: chromeShimmer 9s linear infinite;
+}
+
+/* Dark Theme Metallic Text */
+[data-theme="dark"] .text-chrome,
+[data-theme="dark"] .text-chrome .split-char,
+[data-theme="dark"] .text-chrome .split-word,
+[data-theme="dark"] .text-chrome .hero-title-line {
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #E2E8F0 20%,
+    #94A3B8 40%,
+    #FFFFFF 60%,
+    #CBD5E1 80%,
+    #64748B 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: chromeShimmer 9s linear infinite;
+}
+
+/* In Bangla mode, disable webkit-text-fill-color for hero title lines (font rendering issue) */
+html[lang="bn"] [data-theme="light"] .text-chrome .hero-title-line,
+html[lang="bn"] [data-theme="dark"] .text-chrome .hero-title-line,
+html[lang="bn"] .text-chrome .hero-title-line {
+  -webkit-text-fill-color: unset !important;
+  background: none !important;
+  color: var(--text-primary) !important;
+  animation: none !important;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Split Text Wrappers --- */
+.split-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.split-line-wrap {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.split-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.split-char-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.split-char,
+.split-word {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform-origin: bottom center;
+}
+
+/* Big Editorial Numbers */
+.editorial-num {
+  font-family: var(--font-display);
+  font-size: var(--text-mono-lg);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--border-glass);
+  letter-spacing: -0.05em;
+}
+
+.editorial-num-accent {
+  color: var(--accent-blue);
+  opacity: 0.9;
+}
+
+/* --- Marquee Text Ticker --- */
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.25rem 3rem 1.25rem 0;
+  will-change: transform;
+  width: max-content;
+  max-width: none;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: none;
+}
+
+html[lang="bn"] .marquee-item {
+  font-family: var(--font-bangla);
+}
+
+.marquee-item:hover {
+  color: var(--text-primary);
+}
+
+.marquee-separator {
+  color: var(--accent-blue);
+  font-size: 0.6em;
+  display: inline-block;
+  flex-shrink: 0;
+}

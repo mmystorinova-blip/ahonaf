@@ -1,0 +1,19 @@
+{
+  "username": "admin",
+  "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+  "lastLogin": "2026-11-23T09:04:29.180Z",
+  "sessions": [
+    {
+      "token": "63772b2768d83964bfc9aaa670cfd226ddc126648c4c1953aa9d7f89427dc7b9",
+      "createdAt": "2026-11-23T08:53:27.149Z"
+    },
+    {
+      "token": "ec96b9082dd677e9c188f3bce860a0396e645135a3a0f2548aa85b5dc4cf9850",
+      "createdAt": "2026-11-23T08:59:47.108Z"
+    },
+    {
+      "token": "f6e9ddd53ba4d6b571522e98bcb936085c7c7e59a200e4bec34d82ca3f55919b",
+      "createdAt": "2026-11-23T09:04:29.179Z"
+    }
+  ]
+}

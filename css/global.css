@@ -1,0 +1,219 @@
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS & DUAL-THEME VARIABLES
+   Default: Premium Luxury Light Theme | Optional: Dark Theme
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* Surface Colors (Luxury Light) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FC;
+  --bg-tertiary: #F1F3F7;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(248, 249, 252, 0.98);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --bg-glass-heavy: rgba(255, 255, 255, 0.96);
+  --bg-nav-scrolled: rgba(255, 255, 255, 0.88);
+
+  /* Typography Colors */
+  --text-primary: #171923;     /* Deep Charcoal */
+  --text-secondary: #737783;   /* Muted Neutral Gray */
+  --text-muted: #94A3B8;       /* Subtle Slate */
+  --text-dim: #CBD5E1;
+  --text-white-fixed: #FFFFFF;
+
+  /* Accent Palette */
+  --accent-blue: #4565F5;      /* Electric Blue */
+  --accent-cyan: #0284C7;      /* Clean Cyan */
+  --accent-violet: #8265E8;    /* Soft Violet */
+  --accent-emerald: #10B981;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(23, 25, 35, 0.08);
+  --border-glass: rgba(23, 25, 35, 0.12);
+  --border-metallic: rgba(69, 101, 245, 0.24);
+  --border-accent: rgba(69, 101, 245, 0.45);
+
+  /* Shadows (Refined Editorial) */
+  --shadow-subtle: 0 4px 20px -2px rgba(23, 25, 35, 0.04);
+  --shadow-card: 0 20px 40px -15px rgba(23, 25, 35, 0.07);
+  --shadow-hover: 0 25px 50px -12px rgba(69, 101, 245, 0.14);
+  --shadow-dropdown: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  /* Metallic Chrome Gradients */
+  --chrome-gradient: linear-gradient(135deg, #171923 0%, #4565F5 35%, #8265E8 65%, #171923 100%);
+  --silver-gradient: linear-gradient(180deg, #171923 0%, #4A5568 60%, #718096 100%);
+  --card-border-glow: linear-gradient(135deg, rgba(69, 101, 245, 0.4) 0%, rgba(130, 101, 232, 0.25) 50%, rgba(23, 25, 35, 0.05) 100%);
+
+  /* Custom Cursor */
+  --cursor-dot-color: #4565F5;
+  --cursor-ring-border: rgba(23, 25, 35, 0.45);
+  --cursor-ring-hover-bg: rgba(69, 101, 245, 0.08);
+
+  /* Glass Filter */
+  --glass-blur: blur(20px);
+  --glass-blur-sm: blur(10px);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s var(--ease-out-expo);
+  --transition-normal: 0.45s var(--ease-out-expo);
+  --transition-slow: 0.85s var(--ease-out-expo);
+}
+
+/* ==========================================================================
+   OPTIONAL DARK THEME OVERRIDES
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Surface Colors */
+  --bg-primary: #050505;
+  --bg-secondary: #0C0D12;
+  --bg-tertiary: #12141A;
+  --bg-card: rgba(18, 20, 26, 0.7);
+  --bg-card-hover: rgba(26, 29, 40, 0.9);
+  --bg-glass: rgba(10, 11, 16, 0.75);
+  --bg-glass-heavy: rgba(5, 5, 5, 0.95);
+  --bg-nav-scrolled: rgba(5, 5, 5, 0.85);
+
+  /* Typography Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CFD5E1;
+  --text-muted: #8492A6;
+  --text-dim: #475569;
+
+  /* Accent Palette */
+  --accent-blue: #00F0FF;
+  --accent-cyan: #00F0FF;
+  --accent-violet: #8B5CF6;
+  --accent-emerald: #10B981;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-metallic: rgba(207, 213, 225, 0.28);
+  --border-accent: rgba(0, 240, 255, 0.45);
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+  --shadow-hover: 0 25px 50px -12px rgba(0, 240, 255, 0.22);
+  --shadow-dropdown: 0 20px 45px rgba(0, 0, 0, 0.9);
+
+  /* Metallic Chrome Gradients */
+  --chrome-gradient: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 25%, #94A3B8 50%, #FFFFFF 75%, #CBD5E1 90%, #64748B 100%);
+  --silver-gradient: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 50%, #94A3B8 100%);
+  --card-border-glow: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 240, 255, 0.5) 40%, rgba(139, 92, 246, 0.3) 75%, transparent 100%);
+
+  /* Custom Cursor */
+  --cursor-dot-color: #00F0FF;
+  --cursor-ring-border: rgba(255, 255, 255, 0.4);
+  --cursor-ring-hover-bg: rgba(0, 240, 255, 0.1);
+}
+
+/* ==========================================================================
+   BASE RESETS & LAYOUT UTILITIES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  scroll-behavior: auto;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-glass);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Container Scales */
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Spacing */
+.page-section {
+  position: relative;
+  padding: 7rem 0;
+  z-index: 2;
+}
+
+.page-header {
+  padding-top: 10.5rem;
+  padding-bottom: 4rem;
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, rgba(69, 101, 245, 0.05) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .page-header {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
+}

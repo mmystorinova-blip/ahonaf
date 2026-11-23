@@ -1,0 +1,328 @@
+{
+  "profile": {
+    "name": "MD AHONAF AL RAFI",
+    "shortName": "AHONAF",
+    "role": "Video Editor & AI Content Creator",
+    "roleBn": "ভিডিও এডিটর ও এআই কনটেন্ট ক্রিয়েটর",
+    "status": "ACCEPTING FREELANCE & REMOTE WORK // 2026",
+    "statusBn": "ফ্রিল্যান্স ও রিমোট কাজের জন্য উন্মুক্ত // ২০২৬",
+    "location": "Bangladesh",
+    "locationBn": "বাংলাদেশ",
+    "email": "mdahonafalrafi73@gmail.com",
+    "phone": "01576749300",
+    "whatsapp": "01576749300",
+    "facebook": "https://www.facebook.com/mdahonafalrafi73",
+    "instagram": "https://www.instagram.com/mdahonafalrafi73/",
+    "profileImage": "assets/uploads/1795424828973_1c51db7e-dbc8-45ca-85bb-7260e37e0c2b.png",
+    "logoImage": "assets/images/logo-clean.png",
+    "heroTitleLine1": "CREATIVE MINDS.",
+    "heroTitleLine1Bn": "সৃজনশীল চিন্তা।",
+    "heroTitleLine2": "DIGITAL EXPERIENCES.",
+    "heroTitleLine2Bn": "ডিজিটাল অভিজ্ঞতা।",
+    "heroBio": "Creative Video Editor and AI Content Creator focused on AI-assisted video production, YouTube editing, and short-form social media content. Helping creators, agencies, and businesses turn ideas into engaging digital videos.",
+    "heroBioBn": "ক্রিয়েটিভ ভিডিও এডিটর এবং এআই কনটেন্ট ক্রিয়েটর। এআই-সহায়তা ভিডিও প্রোডাকশন, ইউটিউব এডিটিং এবং শর্ট-ফর্ম সোশ্যাল মিডিয়া কনটেন্টে পারদর্শী। আপনার ধারণাকে দর্শকপ্রিয় ভিডিওতে রূপান্তর করাই আমার লক্ষ্য।"
+  },
+  "marquee": [
+    {
+      "en": "MD: AHONAF AL RAFI",
+      "bn": "মোঃ আহনাফ আল রাফি"
+    },
+    {
+      "en": "AI-ASSISTED PRODUCTION",
+      "bn": "এআই-সহায়তা প্রোডাকশন"
+    },
+    {
+      "en": "SHORTS & REELS EDITING",
+      "bn": "শর্টস ও রিলস এডিটিং"
+    },
+    {
+      "en": "CAPCUT SPECIALIST",
+      "bn": "ক্যাপকাট স্পেশালিস্ট"
+    },
+    {
+      "en": "MOTION GRAPHICS & TEXT",
+      "bn": "মোশন গ্রাফিক্স ও টেক্সট"
+    },
+    {
+      "en": "PROMOTIONAL BANNER DESIGN",
+      "bn": "মার্কেটিং ব্যানার ডিজাইন"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-1",
+      "featured": true,
+      "title": "CYBERPUNK 2099: NEON AWAKENING",
+      "titleBn": "সাইবারপাঙ্ক ২০৯৯: নিয়ন রূপান্তর",
+      "category": "AI VIDEO PRODUCTION",
+      "categoryBn": "এআই ভিডিও প্রোডাকশন",
+      "shortDesc": "A futuristic spec commercial blending generative AI visual synthesis with Hollywood-grade sound architecture and dynamic pacing.",
+      "shortDescBn": "ফিউচারিস্টিক স্পেক কমার্শিয়াল যা জেনারেটিভ এআই ভিজ্যুয়াল ও হলিউড-গ্রেড সাউন্ড ডিজাইনের মাধ্যমে তৈরি।",
+      "image": "assets/images/project-1.jpg",
+      "tools": [
+        "Runway Gen-3",
+        "Midjourney",
+        "CapCut",
+        "Sound Design"
+      ],
+      "client": "AI Video Production",
+      "timeline": "1 Week Sprint",
+      "deliverables": "Full HD / 4K Video, Sound Design, 9:16 Social Cuts",
+      "challengeEn": "Creating engaging visual concepts with high visual impact using AI-assisted video workflows.",
+      "challengeBn": "এআই-সহায়তা ভিডিও পাইপলাইনের মাধ্যমে আধুনিক ও দৃষ্টিনন্দন ভিজ্যুয়াল কনসেপ্ট তৈরি করা।",
+      "solutionEn": "Utilized cutting-edge AI content creation tools combined with human direction, rhythm editing, and layered sound effects.",
+      "solutionBn": "আধুনিক এআই টুলস এবং সৃজনশীল ভিডিও এডিটিং ও সাউন্ড ইফেক্টসের চমৎকার মেলবন্ধন।"
+    },
+    {
+      "id": "project-2",
+      "featured": true,
+      "title": "THE CREATOR ECONOMY DEEP DIVE",
+      "titleBn": "ক্রিয়েটর ইকোনমি বিশ্লেষণ",
+      "category": "YOUTUBE VIDEO EDITING",
+      "categoryBn": "ইউটিউব ভিডিও এডিটিং",
+      "shortDesc": "High-retention documentary-style editing engineered to maximize YouTube average view duration and click-through metrics.",
+      "shortDescBn": "হাই-রিটেনশন ডকুমেন্টারি স্টাইল এডিটিং যা ইউটিউবে ওয়াচ টাইম এবং অডিয়েন্স রিটেনশন বাড়াতে সাহায্য করে।",
+      "image": "assets/images/project-2.jpg",
+      "tools": [
+        "CapCut",
+        "YouTube Studio",
+        "Audio Layering"
+      ],
+      "client": "YouTube Creator Channel",
+      "timeline": "Weekly Delivery",
+      "deliverables": "Full-Length YouTube Video, Custom Sound Effects, Pattern Interrupts",
+      "challengeEn": "Maintaining viewer retention and watch time throughout long-form educational & entertainment content.",
+      "challengeBn": "ইউটিউবে দীর্ঘ সময় জুড়ে দর্শকের মনোযোগ ধরে রাখা এবং ওয়াচ টাইম বৃদ্ধি করা।",
+      "solutionEn": "Structured intentional pattern interrupts, dynamic b-roll inserts, kinetic text pop-ups, and balanced audio leveling.",
+      "solutionBn": "পরিকল্পিত প্যাটার্ন ইন্টারাপ্ট, প্রাসঙ্গিক বি-রোল, ডায়নামিক টেক্সট এবং নিখুঁত অডিও ব্যালেন্সিংয়ের মাধ্যমে ভিডিও সম্পন্ন করা।"
+    },
+    {
+      "id": "project-3",
+      "featured": true,
+      "title": "VIRAL HOOKS: 60-SECOND REVOLUTION",
+      "titleBn": "ভাইরাল হুকস: ৬০ সেকেন্ড রিলস",
+      "category": "SHORTS & REELS EDITING",
+      "categoryBn": "শর্টস ও রিলস এডিটিং",
+      "shortDesc": "Micro-content engineered for high velocity: rapid pacing, animated text overlays, and trending audio synchronization.",
+      "shortDescBn": "প্রথম ৩ সেকেন্ডের হুক, ফাস্ট জাম্প-কাট এবং মোশন ক্যাপশনের সমন্বয়ে তৈরি ভাইরাল শর্ট ভিডিও সিরিজ।",
+      "image": "assets/images/project-3.jpg",
+      "tools": [
+        "CapCut",
+        "Mobile Production",
+        "Trending Audio"
+      ],
+      "client": "Social Media Growth Series",
+      "timeline": "3 Days Turnaround",
+      "deliverables": "10+ Vertical Videos (9:16), High-Hook Architecture, Viral Captions",
+      "challengeEn": "Capturing viewer attention in the first 3 seconds across YouTube Shorts and Instagram Reels.",
+      "challengeBn": "ইউটিউব শর্টস ও ইনস্টাগ্রাম রিলসে প্রথম ৩ সেকেন্ডে দর্শকের সম্পূর্ণ মনোযোগ আকর্ষণ করা।",
+      "solutionEn": "Designed fast hook sequences, rapid-fire jump cuts, animated captions, and sync with trending audio tracks.",
+      "solutionBn": "আকর্ষণীয় হুক সিকোয়েন্স, দ্রুত জাম্প কাট, রঙিন ক্যাপশন এবং ট্রেন্ডিং অডিওর নিখুঁত সিঙ্ক।"
+    },
+    {
+      "id": "project-4",
+      "featured": false,
+      "title": "VELOCITY: HYPER-PACED VISUAL SHOWCASE",
+      "titleBn": "ভেলোসিটি: হাইপার-স্পিড ট্রানজিশন",
+      "category": "CREATIVE VIDEO EDITING",
+      "categoryBn": "ক্রিয়েটিভ ভিডিও এডিটিং",
+      "shortDesc": "Rhythmic cutting, speed ramps, and seamless invisible transitions designed for maximum visual adrenaline.",
+      "shortDescBn": "স্পিড র‍্যাম্পস, স্মুথ ভেলোসিটি ট্রানজিশন এবং মিউজিক বিট-সিঙ্ক এডিটিংয়ের শৈল্পিক রূপ।",
+      "image": "assets/images/project-4.jpg",
+      "tools": [
+        "CapCut",
+        "Speed Ramping",
+        "Keyframe Animation"
+      ],
+      "client": "Creative Portfolio Showcase",
+      "timeline": "4 Days Sprint",
+      "deliverables": "Creative Showcase Reel, Custom Transitions, Velocity Curve Cuts",
+      "challengeEn": "Showcasing advanced video transitions and creative pacing within short-form formats.",
+      "challengeBn": "শর্ট-ফর্ম ভিডিও ফরম্যাটে বৈচিত্র্যময় ট্রানজিশন ও গতিশীল পেসিং ফুটিয়ে তোলা।",
+      "solutionEn": "Applied custom velocity curves, smooth zoom transitions, keyframe tracking, and rhythmic sound effects.",
+      "solutionBn": "কাস্টম ভেলোসিটি কার্ভ, মসৃণ জুম ট্রানজিশন, কি-ফ্রেম ট্র্যাকিং এবং রিদমিক সাউন্ডের সমন্বয়।"
+    },
+    {
+      "id": "project-5",
+      "featured": false,
+      "title": "NEO-BRANDING: KINETIC MOTION PACKAGE",
+      "titleBn": "নিও-ব্র্যান্ডিং: মোশন গ্রাফিক্স প্যাকেজ",
+      "category": "MOTION GRAPHICS & TEXT",
+      "categoryBn": "মোশন গ্রাফিক্স ও টেক্সট",
+      "shortDesc": "Custom animated typography, dynamic lower thirds, and intro animations for high-profile digital creators.",
+      "shortDescBn": "ভিডিও ইন্ট্রো, লোয়ার থার্ডস এবং কাস্টম কাইনেটিক টেক্সট অ্যানিমেশনের কমপ্লিট প্যাকেজ।",
+      "image": "assets/images/project-5.jpg",
+      "tools": [
+        "Adobe After Effects",
+        "Motion Graphics",
+        "Typography"
+      ],
+      "client": "Motion Branding Package",
+      "timeline": "1 Week Sprint",
+      "deliverables": "Animated Intros, Kinetic Titles, Lower Thirds, Motion Accents",
+      "challengeEn": "Enhancing video productions with branded motion graphics and clean kinetic text.",
+      "challengeBn": "ভিডিও প্রোডাকশনে ব্র্যান্ডেড মোশন গ্রাফিক্স ও পরিচ্ছন্ন টেক্সট অ্যানিমেশন যুক্ত করা।",
+      "solutionEn": "Created custom typography reveals, lower third graphic overlays, and animated badges in Adobe After Effects.",
+      "solutionBn": "অ্যাডোবি আফটার ইফেক্টসে কাস্টম টাইপোগ্রাফি রিভিল, লোয়ার থার্ড গ্রাফিক্স ও অ্যানিমেটেড ব্যাজ ডিজাইন।"
+    },
+    {
+      "id": "project-6",
+      "featured": false,
+      "title": "PULSE: MARKETING BANNER & THUMBNAILS",
+      "titleBn": "পালস: মার্কেটিং ব্যানার ও থাম্বনেইল",
+      "category": "GRAPHIC & BANNER DESIGN",
+      "categoryBn": "গ্রাফিক ও ব্যানার ডিজাইন",
+      "shortDesc": "High-contrast promotional banners and YouTube thumbnail architecture designed to drive record click-through rates.",
+      "shortDescBn": "হাই-সিটিআর ক্লিক-থ্রু ইউটিউব থাম্বনেইল এবং সোশ্যাল মিডিয়া মার্কেটিং ব্যানার ডিজাইন।",
+      "image": "assets/images/project-6.jpg",
+      "tools": [
+        "Photoshop",
+        "Canva",
+        "Marketing Layout"
+      ],
+      "client": "Digital Campaign Assets",
+      "timeline": "2 Days Delivery",
+      "deliverables": "Social Media Banners, YouTube Thumbnails, Marketing Creatives",
+      "challengeEn": "Designing high-click-through promotional banners and thumbnails for marketing campaigns.",
+      "challengeBn": "মার্কেটিং ক্যাম্পেইনের জন্য হাই-ক্লিক-থ্রু প্রোমোশনাল ব্যানার এবং ইউটিউব থাম্বনেইল ডিজাইন।",
+      "solutionEn": "Crafted bold visual hierarchy, clean contrast, crisp typography, and compelling marketing call-to-actions.",
+      "solutionBn": "স্পষ্ট ভিজ্যুয়াল হায়ারার্কি, চমৎকার কনট্রাস্ট এবং স্পষ্ট কল-টু-অ্যাকশনের মাধ্যমে ব্যানার প্রস্তুত।"
+    }
+  ],
+  "services": [
+    {
+      "id": "service-1",
+      "title": "YouTube Video Editing",
+      "titleBn": "ইউটিউব ভিডিও এডিটিং",
+      "desc": "Full-length long-form YouTube editing with intentional pattern interrupts, b-roll storytelling, sound effects, and audience retention optimization.",
+      "descBn": "দীর্ঘ ভিডিওর জন্য রিটেনশন-বেসড এডিটিং, বি-রোল সিলেকশন, সাউন্ড এফেক্টস এবং ভিজ্যুয়াল হুক তৈরি।",
+      "tools": [
+        "CapCut Pro",
+        "Premiere Pro",
+        "Audition"
+      ],
+      "deliverable": "1080p / 4K YouTube Ready Cut, Thumbnail Assistance"
+    },
+    {
+      "id": "service-2",
+      "title": "AI-Assisted Video Production",
+      "titleBn": "এআই-সহায়তা ভিডিও প্রোডাকশন",
+      "desc": "Generating next-generation visuals using cutting-edge AI image and video synthesis tools, seamlessly integrated into cohesive video productions.",
+      "descBn": "আধুনিক এআই ইমেজ ও ভিডিও জেনারেটিভ টুলস ব্যবহার করে যুগান্তকারী কনসেপ্ট ও সিনেমাটিক ফুটেজ তৈরি।",
+      "tools": [
+        "Runway Gen-3",
+        "Midjourney",
+        "Pika",
+        "CapCut"
+      ],
+      "deliverable": "AI Generated Assets, Complete Spec Films & Ads"
+    },
+    {
+      "id": "service-3",
+      "title": "Shorts, Reels & TikToks",
+      "titleBn": "শর্টস, রিলস ও টিকটক এডিটিং",
+      "desc": "High-impact vertical videos (9:16) with fast-paced cuts, synchronized audio, animated captions, and visual retention hooks.",
+      "descBn": "দ্রুতগতির ভার্টিক্যাল ভিডিও, মোশন ক্যাপশন, বিট সিঙ্ক এবং ভাইরাল হুকসের সমন্বয়ে প্রস্তুত রিলস।",
+      "tools": [
+        "CapCut",
+        "Auto-Captions",
+        "Audio Sync"
+      ],
+      "deliverable": "9:16 Vertical Video with Dynamic Kinetic Text"
+    },
+    {
+      "id": "service-4",
+      "title": "Motion Graphics & Text Animations",
+      "titleBn": "মোশন গ্রাফিক্স ও টেক্সট অ্যানিমেশন",
+      "desc": "Custom branded lower-thirds, animated typography, intro sequences, logo animations, and infographic motion overlays.",
+      "descBn": "কাস্টম লোয়ার-থার্ডস, কাইনেটিক টাইপোগ্রাফি, ইন্ট্রো অ্যানিমেশন ও মোশন গ্রাফিক্স এলিমেন্টস।",
+      "tools": [
+        "After Effects",
+        "Premiere Pro",
+        "Illustrator"
+      ],
+      "deliverable": "Custom Motion Assets, Alpha Channel Overlays"
+    },
+    {
+      "id": "service-5",
+      "title": "Promotional Banner & Thumbnail Design",
+      "titleBn": "প্রোমোশনাল ব্যানার ও থাম্বনেইল ডিজাইন",
+      "desc": "High-CTR YouTube thumbnail architecture, social media promotional banners, and compelling graphic visuals that drive traffic.",
+      "descBn": "ইউটিউবের জন্য হাই-ক্লিক-থ্রু থাম্বনেইল এবং সোশ্যাল মিডিয়া মার্কেটিং ব্যানার ডিজাইন।",
+      "tools": [
+        "Adobe Photoshop",
+        "Canva Pro"
+      ],
+      "deliverable": "High-Res PNG/JPG in All Aspect Ratios"
+    },
+    {
+      "id": "service-6",
+      "title": "Audio Mastering & Sound Design",
+      "titleBn": "অডিও মাস্টারিং ও সাউন্ড ডিজাইন",
+      "desc": "Crystal-clear dialogue enhancement, noise reduction, vocal leveling, background music sync, and immersive whooshes & impact sound effects.",
+      "descBn": "নয়েজ রিডাকশন, ক্রিস্টাল ক্লিয়ার ভয়েস এনহ্যান্সমেন্ট, ব্যাকগ্রাউন্ড স্কোর সিঙ্ক এবং ইম্প্যাক্ট সাউন্ড।",
+      "tools": [
+        "Audacity",
+        "CapCut Audio Engine",
+        "EQ Plugins"
+      ],
+      "deliverable": "Multi-track Balanced Mastered Audio"
+    }
+  ],
+  "skills": [
+    {
+      "name": "CapCut Desktop & Mobile",
+      "category": "editing",
+      "level": "Expert",
+      "highlight": true
+    },
+    {
+      "name": "Adobe Premiere Pro",
+      "category": "editing",
+      "level": "Advanced",
+      "highlight": true
+    },
+    {
+      "name": "Adobe After Effects",
+      "category": "motion",
+      "level": "Intermediate",
+      "highlight": true
+    },
+    {
+      "name": "DaVinci Resolve",
+      "category": "editing",
+      "level": "Intermediate",
+      "highlight": false
+    },
+    {
+      "name": "Runway Gen-3 / Pika",
+      "category": "ai",
+      "level": "Advanced",
+      "highlight": true
+    },
+    {
+      "name": "Midjourney AI",
+      "category": "ai",
+      "level": "Advanced",
+      "highlight": true
+    },
+    {
+      "name": "Adobe Photoshop",
+      "category": "graphics",
+      "level": "Advanced",
+      "highlight": false
+    },
+    {
+      "name": "Canva Pro",
+      "category": "graphics",
+      "level": "Expert",
+      "highlight": false
+    },
+    {
+      "name": "Audio Cleanup & Sound FX",
+      "category": "audio",
+      "level": "Advanced",
+      "highlight": true
+    }
+  ]
+}

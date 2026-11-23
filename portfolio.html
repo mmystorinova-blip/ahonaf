@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Portfolio ✦ AHONAF | Selected Archive &amp; Productions</title>
+  <meta name="description" content="Cinematic video productions, AI-generated short films, viral YouTube Shorts campaigns, and interactive 3D WebGL experiences by Ahonaf.">
+  <meta name="author" content="Ahonaf">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23171923'/><text x='50%' y='65%' font-family='sans-serif' font-size='50' font-weight='bold' fill='%234565F5' text-anchor='middle'>AR</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- External Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light-theme.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+        <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link active" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+        </div>
+
+        <button class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button id="audio-toggle-btn" class="btn-audio-toggle nav-desktop-only" aria-label="Toggle UI Audio Feedback" title="Toggle Sound Design">
+          <i data-lucide="volume-x"></i>
+        </button>
+
+        <div class="nav-clock nav-desktop-only" title="Local Time in Dhaka, Bangladesh (UTC+6)">
+          <div class="clock-dot"></div>
+          <span data-i18n="live_dhaka">DHAKA</span>
+          <span id="live-clock">12:00:00 PM</span>
+        </div>
+
+        <div class="magnetic-wrap nav-desktop-only">
+          <a href="contact.html" class="btn btn-primary magnetic-target">
+            <span data-i18n="nav_talk">LET'S TALK</span>
+            <i data-lucide="arrow-up-right" class="btn-icon"></i>
+          </a>
+        </div>
+
+        <button class="btn-hamburger" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu -->
+  <div id="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link"><span class="mobile-nav-num">01</span><span data-i18n="nav_home">Home</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link"><span class="mobile-nav-num">02</span><span data-i18n="nav_about">About</span></a></li>
+      <li><a href="skills.html" class="mobile-nav-link"><span class="mobile-nav-num">03</span><span data-i18n="nav_skills">Skills</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link"><span class="mobile-nav-num">04</span><span data-i18n="nav_services">Services</span></a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link active"><span class="mobile-nav-num">05</span><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-num">06</span><span data-i18n="nav_contact">Contact</span></a></li>
+    </ul>
+
+    <div class="mobile-controls-row">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+      </div>
+      <button class="btn-theme-toggle" aria-label="Toggle Theme">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <div class="eyebrow" data-i18n="footer_tagline">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- PAGE HERO HEADER -->
+    <section class="page-header" style="padding-top: 9rem; padding-bottom: 3rem;">
+      <div class="container">
+        <div class="page-header-content">
+          <span class="eyebrow" data-i18n="nav_portfolio">PORTFOLIO</span>
+          <h1 class="page-title text-chrome" data-i18n="portfolio_page_title">
+            SELECTED ARCHIVE &amp; PRODUCTIONS
+          </h1>
+          <p class="page-subtitle" data-i18n="portfolio_page_sub">
+            A curated collection of cinematic edits, generative AI films, viral short-form campaigns, and interactive 3D web experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT FILTER TABS & GALLERY -->
+    <section class="page-section" style="padding-top: 1rem; padding-bottom: 5rem;">
+      <div class="container">
+        
+        <!-- Filter Pills Bar -->
+        <div style="display: flex; justify-content: center; margin-bottom: 3.5rem;">
+          <div class="filter-pills-row" role="tablist" aria-label="Portfolio Filters">
+            <button class="btn-tag project-filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+            <button class="btn-tag project-filter-btn" data-filter="ai" data-i18n="filter_ai">AI Films</button>
+            <button class="btn-tag project-filter-btn" data-filter="cinematic" data-i18n="filter_cinematic">Cinematic Edits</button>
+            <button class="btn-tag project-filter-btn" data-filter="short" data-i18n="filter_short">Short-Form / Reels</button>
+            <button class="btn-tag project-filter-btn" data-filter="web" data-i18n="filter_web">Creative Web</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 01 -->
+          <article class="project-card" data-category="ai" data-project-id="project-1">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-1.jpg" alt="Cyberpunk 2099 AI Spec Film" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">01</span>
+                <span class="project-category" data-i18n="project1_cat">AI SPEC FILM</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project1_title">CYBERPUNK 2099: NEON AWAKENING</h2>
+              <p class="project-desc" data-i18n="project1_desc">
+                A futuristic spec commercial blending generative AI visual synthesis with Hollywood-grade sound architecture and dynamic pacing.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">Runway Gen-3</span>
+                <span class="project-tool-tag">Midjourney v6</span>
+                <span class="project-tool-tag">Premiere Pro</span>
+                <span class="project-tool-tag">DaVinci Resolve</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-1" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02 -->
+          <article class="project-card" data-category="cinematic" data-project-id="project-2">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-2.jpg" alt="The Rise of Artificial Minds Documentary" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">02</span>
+                <span class="project-category" data-i18n="project2_cat">DOCUMENTARY</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project2_title">THE RISE OF ARTIFICIAL MINDS</h2>
+              <p class="project-desc" data-i18n="project2_desc">
+                A 42-minute deep-dive YouTube documentary engineered for maximum retention, generating over 3.8M organic views and 98% positive sentiment.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">Premiere Pro</span>
+                <span class="project-tool-tag">DaVinci Resolve</span>
+                <span class="project-tool-tag">ElevenLabs</span>
+                <span class="project-tool-tag">After Effects</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-2" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03 -->
+          <article class="project-card" data-category="short" data-project-id="project-3">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-3.jpg" alt="Velocity Hyperdrive Viral Series" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">03</span>
+                <span class="project-category" data-i18n="project3_cat">SHORTS / REELS</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project3_title">VELOCITY HYPERDRIVE: VIRAL SERIES</h2>
+              <p class="project-desc" data-i18n="project3_desc">
+                A high-velocity viral short-form campaign engineered for YouTube Shorts and Instagram Reels, generating 12M+ cross-platform views.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">CapCut Pro</span>
+                <span class="project-tool-tag">Premiere Pro</span>
+                <span class="project-tool-tag">After Effects</span>
+                <span class="project-tool-tag">Custom SFX</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-3" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04 -->
+          <article class="project-card" data-category="web" data-project-id="project-4">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-4.jpg" alt="Chronos Aether WebGL 3D World" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">04</span>
+                <span class="project-category" data-i18n="project4_cat">CREATIVE DEV</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project4_title">CHRONOS AETHER: WEBGL 3D WORLD</h2>
+              <p class="project-desc" data-i18n="project4_desc">
+                An interactive 3D digital universe featuring metallic PBR shaders, dynamic cursor lighting, and spatial audio synthesis.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">Three.js</span>
+                <span class="project-tool-tag">WebGL</span>
+                <span class="project-tool-tag">GSAP</span>
+                <span class="project-tool-tag">Web Audio API</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-4" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 05 -->
+          <article class="project-card" data-category="cinematic" data-project-id="project-5">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-5.jpg" alt="Zenith Automotive Luxury Spot" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">05</span>
+                <span class="project-category" data-i18n="project5_cat">COMMERCIAL</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project5_title">ZENITH AUTOMOTIVE: LUXURY SPOT</h2>
+              <p class="project-desc" data-i18n="project5_desc">
+                Cinema-grade luxury automotive spot featuring high-dynamic-range color grading, speed ramping, and precision sound architecture.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">DaVinci Resolve Studio</span>
+                <span class="project-tool-tag">Premiere Pro</span>
+                <span class="project-tool-tag">Sound Stems</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-5" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 06 -->
+          <article class="project-card" data-category="short" data-project-id="project-6">
+            <div class="project-thumb-wrap">
+              <img src="assets/images/project-6.jpg" alt="Future Formula Reels Package" class="project-thumb" loading="lazy">
+              <div class="project-meta-badges">
+                <span class="project-num">06</span>
+                <span class="project-category" data-i18n="project6_cat">GROWTH CAMPAIGN</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h2 class="project-title" data-i18n="project6_title">FUTURE FORMULA: REELS PACKAGE</h2>
+              <p class="project-desc" data-i18n="project6_desc">
+                Comprehensive content machine for a modern venture studio, resulting in over 500,000 targeted follower growth across channels.
+              </p>
+              <div class="project-tools">
+                <span class="project-tool-tag">CapCut Pro</span>
+                <span class="project-tool-tag">Premiere Pro</span>
+                <span class="project-tool-tag">Midjourney</span>
+                <span class="project-tool-tag">Figma</span>
+              </div>
+              <div class="project-actions">
+                <a href="project-details.html?project=project-6" class="btn btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                  <span data-i18n="btn_explore">CASE STUDY</span>
+                  <i data-lucide="arrow-up-right" class="btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="page-section bg-alt">
+      <div class="container">
+        <div class="card-surface" style="padding: 4.5rem 3rem; border-radius: var(--radius-xl); text-align: center; max-width: 900px; margin: 0 auto;">
+          <h2 class="section-title text-chrome" data-i18n="cta_banner_title" style="margin-bottom: 1.5rem;">
+            LET'S CREATE SOMETHING AMAZING.
+          </h2>
+          <p class="page-subtitle" data-i18n="cta_banner_desc" style="max-width: 600px; margin: 0 auto 2.5rem;">
+            Have an ambitious vision, a YouTube channel to scale, or an AI-driven campaign to direct? Let's connect today.
+          </p>
+          <div class="hero-cta-group" style="justify-content: center; margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary">
+              <span data-i18n="btn_connect">LET'S CONNECT</span>
+              <i data-lucide="arrow-up-right" class="btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container-wide">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo" aria-label="Ahnaf Al Rafi Home">
+          <img src="assets/images/logo-clean.png" alt="Ahnaf Al Rafi Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="skills.html" class="footer-nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="services.html" class="footer-nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="portfolio.html" class="footer-nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="footer-nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <button class="btn-back-to-top" aria-label="Scroll back to top" title="Back to Top">
+          <svg class="progress-ring" width="50" height="50" viewBox="0 0 54 54">
+            <circle class="progress-ring-circle" stroke-width="2.5" fill="transparent" r="25" cx="27" cy="27" />
+          </svg>
+          <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_copyright">&copy; 2026 AHONAF. ALL RIGHTS RESERVED.</div>
+        <div class="eyebrow" data-i18n="footer_tagline">BANGLADESH ✦ AVAILABLE WORLDWIDE</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/typography.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
